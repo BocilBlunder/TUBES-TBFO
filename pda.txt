@@ -1,0 +1,61 @@
+S0 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17
+< > html head body </ title
+Z < > html head body </ title
+S0
+Z
+S4
+F
+S0 < Z S0 <Z
+S0 html < S0 html<
+S0 > html S1 html
+S1 < html S1 <html
+S1 head < S1 head<
+S1 > head S2 head
+S2 </ head S3 head
+S3 head head S3 e
+S3 > < S3 e
+S4 html html S4 e
+S4 > < S4 e
+S5 < html S5 <html
+S5 body < S5 body<
+S5 > body S6 body
+S6 </ body S7 body
+S7 body body S7 e
+S7 > < S7 e
+S7 </ html S4 html
+S6 e body S8 body
+S8 < body S8 <body
+S8 p < S8 p<
+S8 > p S9 p
+S9 any p S9 p
+S9 </ p S10 p
+S10 p p S10 e
+S10 > < S10 e
+S10 e body S6 body
+S3 e html S5 html
+S2 e head S11 head
+S11 < head S11 <head
+S11 title < S11 title<
+S11 > title S12 title
+S12 any title S12 title
+S12 </ title S13 title
+S13 title title S13 e
+S13 > < S13 e
+S13 e head S2 head
+S2 e head S14 head
+S14 < head S14 <head
+S14 link < S14 link<
+S14 href link S15 hreflink
+S14 rel link S15 rellink
+S14 e link S17 e
+S15 = href S15 =href
+S15 = rel S15 =rel
+S15 " = S15 "=
+S15 any " S15 "
+S15 " " S15 e
+S15 e = S16 e
+S16 e link S14 link
+S16 e href S16 e
+S16 e rel S16 e
+S16 e link S17 e
+S17 > < S2 e
