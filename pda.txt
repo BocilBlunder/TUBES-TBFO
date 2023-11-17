@@ -1,6 +1,6 @@
-S0 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17 S18 S19 S20
-< > html head body </ title any link href rel = " script src
-Z < > html head body </ title any link href rel = " script src
+S0 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17 S18 S19 S20 S21 S22 S23 S24 S25 S26 S27 S28 S29 S30 S31
+< > html head body </ title any link href rel = " script src h1 h2 h3 h4 h5 h6 table tr th td
+Z < > html head body </ title any link href rel = " script src h1 h2 h3 h4 h5 h6 table tr th td
 S0
 Z
 S4
@@ -34,6 +34,7 @@ S8 h3 < S8 h3<
 S8 h4 < S8 h4<
 S8 h5 < S8 h5<
 S8 h6 < S8 h6<
+S8 table < S8 table<
 S8 > p S9 p
 S8 > h1 S9 h1
 S8 > h2 S9 h2
@@ -41,6 +42,7 @@ S8 > h3 S9 h3
 S8 > h4 S9 h4
 S8 > h5 S9 h5
 S8 > h6 S9 h6
+S8 > table S21 table
 S9 any p S9 p
 S9 any h1 S9 h1
 S9 any h2 S9 h2
@@ -103,3 +105,39 @@ S19 </ script S20 script
 S20 script script S20 e
 S20 > < S20 e
 S20 e head S2 head
+S21 < table S21 <table
+S21 tr < S21 tr<
+S21 > tr S22 tr
+S21 e table S30 table
+S22 < tr S22 <tr
+S22 th < S22 th<
+S22 > th S23 th
+S22 e tr S29 tr
+S23 any th S23 th
+S23 </ th S24 th
+S24 e tr S21 tr
+S24 th th S24 e
+S24 > < S24 e
+S24 </ tr S25 tr
+S25 tr tr S25 e
+S25 > < S25 e
+S25 </ table S31 table
+S25 e table S26 table
+S26 < table S26 <table
+S26 tr < S26 tr<
+S26 > tr S27 tr
+S27 < tr S27 <tr
+S27 td < S27 td<
+S27 > td S28 td
+S27 e tr S29 tr
+S28 any td S28 td
+S28 </ td S29 td
+S29 td td S29 e
+S29 > < S29 e
+S29 </ tr S30 tr
+S30 tr tr S30 e
+S30 > < S30 e
+S30 </ table S31 table
+S31 table table S31 e
+S31 > < S31 e
+S31 e body S6 body

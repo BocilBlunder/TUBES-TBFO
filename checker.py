@@ -1,5 +1,6 @@
 import os
 import sys
+
 start_input = ""
 input_array = []
 found = 0 # stores found state
@@ -46,6 +47,10 @@ def tokenize(input):
     'h4',
     'h5',
     'h6',
+    'table',
+    'tr',
+    'th',
+    'td'
     ]
     output = []
 
