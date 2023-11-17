@@ -1,6 +1,5 @@
 import os
 import sys
-
 start_input = ""
 input_array = []
 found = 0 # stores found state
@@ -39,7 +38,14 @@ def tokenize(input):
     '=',
     '"',
     'script',
-    'src'
+    'src',
+    'p',
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
     ]
     output = []
 

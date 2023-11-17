@@ -1,6 +1,6 @@
-S0 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17
-< > html head body </ title
-Z < > html head body </ title
+S0 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17 S18 S19 S20
+< > html head body </ title any link href rel = " script src
+Z < > html head body </ title any link href rel = " script src
 S0
 Z
 S4
@@ -12,8 +12,10 @@ S1 < html S1 <html
 S1 head < S1 head<
 S1 > head S2 head
 S2 </ head S3 head
+S2 e head S14 head
 S3 head head S3 e
 S3 > < S3 e
+S3 e html S5 html
 S4 html html S4 e
 S4 > < S4 e
 S5 < html S5 <html
@@ -26,27 +28,62 @@ S7 </ html S4 html
 S6 e body S8 body
 S8 < body S8 <body
 S8 p < S8 p<
+S8 h1 < S8 h1<
+S8 h2 < S8 h2<
+S8 h3 < S8 h3<
+S8 h4 < S8 h4<
+S8 h5 < S8 h5<
+S8 h6 < S8 h6<
 S8 > p S9 p
+S8 > h1 S9 h1
+S8 > h2 S9 h2
+S8 > h3 S9 h3
+S8 > h4 S9 h4
+S8 > h5 S9 h5
+S8 > h6 S9 h6
 S9 any p S9 p
+S9 any h1 S9 h1
+S9 any h2 S9 h2
+S9 any h3 S9 h3
+S9 any h4 S9 h4
+S9 any h5 S9 h5
+S9 any h6 S9 h6
 S9 </ p S10 p
+S9 </ h1 S10 h1
+S9 </ h2 S10 h2
+S9 </ h3 S10 h3
+S9 </ h4 S10 h4
+S9 </ h5 S10 h5
+S9 </ h6 S10 h6
 S10 p p S10 e
+S10 h1 h1 S10 e
+S10 h2 h2 S10 e
+S10 h3 h3 S10 e
+S10 h4 h4 S10 e
+S10 h5 h5 S10 e
+S10 h6 h6 S10 e
 S10 > < S10 e
 S10 e body S6 body
-S3 e html S5 html
-S2 e head S11 head
-S11 < head S11 <head
-S11 title < S11 title<
-S11 > title S12 title
+S11 = src S11 =src
+S11 " = S11 "=
+S11 any " S11 "
+S11 " " S11 e
+S11 e = S18 e
+S11 e script S19 script
 S12 any title S12 title
 S12 </ title S13 title
 S13 title title S13 e
 S13 > < S13 e
 S13 e head S2 head
-S2 e head S14 head
 S14 < head S14 <head
 S14 link < S14 link<
+S14 title < S14 title<
+S14 script < S14 script<
 S14 href link S15 hreflink
 S14 rel link S15 rellink
+S14 src script S11 srcscript
+S14 > script S11 script
+S14 > title S12 title
 S14 e link S17 e
 S15 = href S15 =href
 S15 = rel S15 =rel
@@ -59,3 +96,10 @@ S16 e href S16 e
 S16 e rel S16 e
 S16 e link S17 e
 S17 > < S2 e
+S18 e src S18 e
+S18 > script S19 script
+S19 any script S19 script
+S19 </ script S20 script
+S20 script script S20 e
+S20 > < S20 e
+S20 e head S2 head
