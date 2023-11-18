@@ -1,6 +1,8 @@
 import os
 import sys
 
+sys.setrecursionlimit(10000)
+
 start_input = ""
 input_array = []
 found = 0 # stores found state
