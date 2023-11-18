@@ -50,7 +50,8 @@ def tokenize(input):
     'table',
     'tr',
     'th',
-    'td'
+    'td',
+    'br'
     ]
     output = []
 
