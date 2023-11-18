@@ -119,7 +119,7 @@ def get_moves(state, input, stack, config):
 
    # read symbol from input if we have one
    if len(current[0]) > 0:
-    if len(input) > 0 and (input[0] == current[0] or current[0] == "any"):
+    if len(input) > 0 and (input[0] == current[0] or (current[0] == "any" and input[0] not in ['<', '>'])):
      new.append(input[1:])
     else:
      continue

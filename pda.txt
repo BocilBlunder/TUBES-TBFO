@@ -115,7 +115,7 @@ S22 > th S23 th
 S22 e tr S29 tr
 S23 any th S23 th
 S23 </ th S24 th
-S24 e tr S21 tr
+S24 e tr S22 tr
 S24 th th S24 e
 S24 > < S24 e
 S24 </ tr S25 tr
