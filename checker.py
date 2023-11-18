@@ -53,7 +53,8 @@ def tokenize(input):
     'tr',
     'th',
     'td',
-    'br'
+    'br',
+    'div'
     ]
     output = []
 

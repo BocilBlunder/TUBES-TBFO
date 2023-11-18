@@ -22,10 +22,13 @@ S5 < html S5 <html
 S5 body < S5 body<
 S5 > body S6 body
 S6 </ body S7 body
+S6 e body S8 body
+S6 e div S8 div
+S6 < body S35 body
+S6 < div S35 div
 S7 body body S7 e
 S7 > < S7 e
 S7 </ html S4 html
-S6 e body S8 body
 S8 < body S8 <body
 S8 p < S8 p<
 S8 h1 < S8 h1<
@@ -43,6 +46,7 @@ S8 > h4 S9 h4
 S8 > h5 S9 h5
 S8 > h6 S9 h6
 S8 > table S21 table
+S8 < div S8 <div
 S9 any p S9 p
 S9 any h1 S9 h1
 S9 any h2 S9 h2
@@ -73,6 +77,7 @@ S10 h5 h5 S10 e
 S10 h6 h6 S10 e
 S10 > < S10 e
 S10 e body S6 body
+S10 e div S6 div
 S11 = src S11 =src
 S11 " = S11 "=
 S11 any " S11 "
@@ -155,6 +160,7 @@ S30 </ table S31 table
 S31 table table S31 e
 S31 > < S31 e
 S31 e body S6 body
+S31 e div S6 div
 S32 br p S32 brp
 S32 br h1 S32 brh1
 S32 br h2 S32 brh2
@@ -169,3 +175,11 @@ S33 > br S23 e
 S28 < td S34 td
 S34 br td S34 brtd
 S34 > br S28 e
+S35 div body S35 divbody
+S35 div div S36 divdiv
+S35 > div S6 div
+S36 > div S6 div
+S6 </ div S37 div
+S37 div div S38 e
+S38 > body S6 body
+S38 > div S6 div
