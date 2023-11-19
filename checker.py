@@ -54,7 +54,12 @@ def tokenize(input):
     'th',
     'td',
     'br',
-    'div'
+    'div',
+    'em',
+    'b',
+    'abbr',
+    'strong',
+    'small'
     ]
     output = []
 
@@ -66,6 +71,7 @@ def tokenize(input):
                 token_length = len(token)
                 input = input[token_length:]
                 found_token = True
+                break
 
         if (not(found_token)):
             if (not(input[0] == ' ' or input[0] == '\n')):
