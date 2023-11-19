@@ -26,6 +26,7 @@ S6 e body S8 body
 S6 e div S8 div
 S6 < body S35 body
 S6 < div S35 div
+S6 </ div S37 div
 S7 body body S7 e
 S7 > < S7 e
 S7 </ html S4 html
@@ -127,7 +128,6 @@ S22 > th S23 th
 S22 e tr S29 tr
 S23 any th S23 th
 S23 </ th S24 th
-S23 < th S33 th
 S33 br th S33 brth
 S33 > br S23 e
 S24 e tr S22 tr
@@ -169,17 +169,10 @@ S32 br h4 S32 brh4
 S32 br h5 S32 brh5
 S32 br h6 S32 brh6
 S32 > br S9 e
-S23 < th S33 th
-S33 br th S33 brth
-S33 > br S23 e
-S28 < td S34 td
-S34 br td S34 brtd
-S34 > br S28 e
 S35 div body S35 divbody
 S35 div div S36 divdiv
 S35 > div S6 div
 S36 > div S6 div
-S6 </ div S37 div
 S37 div div S38 e
 S38 > body S6 body
 S38 > div S6 div
