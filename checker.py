@@ -36,9 +36,8 @@ def tokenize(input):
     'any',
     'title',
     'link',
-    'href',
-    'rel',
-    '=',
+    'href=',
+    'rel=',
     '"',
     'script',
     'src',
@@ -60,6 +59,8 @@ def tokenize(input):
     'abbr',
     'strong',
     'small',
+    'a',
+    'href=',
     'hr'
     ]
     output = []
