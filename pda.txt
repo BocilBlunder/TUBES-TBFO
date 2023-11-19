@@ -29,6 +29,8 @@ S6 < div S35 div
 S6 </ div S37 div
 S6 e body S33 body
 S6 e div S33 div
+S6 < body S41 body
+S6 < div S41 div
 S7 body body S7 e
 S7 > < S7 e
 S7 </ html S4 html
@@ -237,3 +239,6 @@ S40 br abbr S40 brabbr
 S40 br strong S40 brstrong
 S40 br small S40 brsmall
 S40 > br S34 e
+S41 hr body S41 hrbody
+S41 hr div S41 hrdiv
+S41 > hr S6 e

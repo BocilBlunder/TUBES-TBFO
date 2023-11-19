@@ -59,7 +59,8 @@ def tokenize(input):
     'b',
     'abbr',
     'strong',
-    'small'
+    'small',
+    'hr'
     ]
     output = []
 
