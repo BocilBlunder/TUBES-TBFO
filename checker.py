@@ -22,47 +22,71 @@ stack_start = ""
 
 acceptable_states = []
 
+tokens = [
+'</',
+'<', 
+'>',
+'html', 
+'head', 
+'body',
+'any',
+'title',
+'link=',
+'href=',
+'rel=',
+'"',
+'script',
+'src=',
+'p',
+'h1',
+'h2',
+'h3',
+'h4',
+'h5',
+'h6',
+'table',
+'tr',
+'th',
+'td',
+'br',
+'div',
+'em',
+'b',
+'abbr',
+'strong',
+'small',
+'a',
+'href=',
+'hr'
+]
+
 # E - accept on empty stack or F - acceptable state (default is false)
 accept_with = ""
 
 def tokenize(input):
-    tokens = [
-    '</',
-    '<', 
-    '>',
-    'html', 
-    'head', 
-    'body',
-    'any',
-    'title',
-    'link',
-    'href=',
-    'rel=',
-    '"',
-    'script',
-    'src',
-    'p',
-    'h1',
-    'h2',
-    'h3',
-    'h4',
-    'h5',
-    'h6',
-    'table',
-    'tr',
-    'th',
-    'td',
-    'br',
-    'div',
-    'em',
-    'b',
-    'abbr',
-    'strong',
-    'small',
-    'a',
-    'href=',
-    'hr'
-    ]
+    output = []
+
+    prev_char = ''
+    while (input != ""):
+        found_token = False
+        for token in tokens:
+            if input.startswith(token) and (prev_char in [' ', '<', '>', '\n', '"', '</'] and ((len(token) < len(input)) and (input[len(token):][0] in [' ', '<', '>', '\n', '"'])) or (token in ['</', '<'])):
+                output.append(token)
+                token_length = len(token)
+                input = input[token_length:]
+                found_token = True
+                prev_char = token
+                break
+
+        if (not(found_token)):
+            if (not(input[0] == ' ' or input[0] == '\n')):
+                output.append(input[0])
+            prev_char = input[0]
+            input = input[1:]
+
+    return output
+
+def tokenize_pda(input):
     output = []
 
     while (input != ""):
@@ -201,7 +225,7 @@ def parse_file(filename):
  for i in range(7, len(lines)):
   production = lines[i].split()
 
-  configuration = [(production[1], production[2], tokenize(production[4]), production[3])]
+  configuration = [(production[1], production[2], tokenize_pda(production[4]), production[3])]
 
   if not production[0] in productions.keys(): 
    productions[production[0]] = []
@@ -226,7 +250,7 @@ def done():
 
 
 if len(sys.argv) != 3:
-    print("Invalid parameters. Usage: python3 neo.py pda.txt test.html")
+    print("Invalid parameters. Usage: python3 checker.py pda.txt test.html")
     exit()
 
 parse_file(sys.argv[1])
