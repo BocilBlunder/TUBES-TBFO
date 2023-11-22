@@ -31,7 +31,7 @@ tokens = [
 'body',
 'any',
 'title',
-'link=',
+'link',
 'href=',
 'rel=',
 '"',
@@ -56,7 +56,6 @@ tokens = [
 'strong',
 'small',
 'a',
-'href=',
 'hr'
 ]
 
