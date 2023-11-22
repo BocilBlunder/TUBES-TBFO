@@ -31,6 +31,8 @@ S6 e body S33 body
 S6 e div S33 div
 S6 < body S41 body
 S6 < div S41 div
+S6 e body S14 body
+S6 e div S14 div
 S7 body body S7 e
 S7 > < S7 e
 S7 </ html S4 html
@@ -105,6 +107,8 @@ S14 script < S14 script<
 S14 e link S15 link
 S14 e script S11 script
 S14 > title S12 title
+S14 < body S14 <body
+S14 < div S14 <div
 S15 href= link S15 href=link
 S15 rel= link S15 rel=link
 S15 e href= S48 href=
@@ -113,11 +117,16 @@ S16 e link S15 link
 S16 e href= S16 e
 S16 e rel= S17 e
 S17 e link S18 e
-S18 > < S2 e
+S18 e head S2 head
+S18 > < S18 e
+S18 e body S6 body
+S18 e div S6 div
 S19 > script S49 script
 S20 script script S20 e
 S20 > < S20 e
 S20 e head S2 head
+S20 e body S6 body
+S20 e div S6 div
 S21 < table S21 <table
 S21 tr < S21 tr<
 S21 > tr S22 tr
