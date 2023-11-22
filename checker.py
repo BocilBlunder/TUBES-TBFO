@@ -29,6 +29,7 @@ tokens = [
 'html', 
 'head', 
 'body',
+'alt=',
 'any',
 'title',
 'link',
@@ -56,7 +57,8 @@ tokens = [
 'strong',
 'small',
 'a',
-'hr'
+'hr',
+'img',
 ]
 
 # E - accept on empty stack or F - acceptable state (default is false)
