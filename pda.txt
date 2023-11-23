@@ -3,7 +3,7 @@ S0 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17 S18 S19 S20 S21 S2
 Z < > html head body </ title any link href= rel= alt= " script src= h1 h2 h3 h4 h5 h6 table tr th td br div em b abbr strong small a hr img form method= action= GET POST button type= submit reset input password text email number checkbox
 S0
 Z
-S6
+S4
 F
 S0 < Z S0 <Z
 S0 html < S0 html<
@@ -21,6 +21,8 @@ S4 > < S4 e
 S5 < html S5 <html
 S5 body < S5 body<
 S5 > body S6 body
+S6 any div S6 div
+S6 any form S6 form
 S6 </ body S7 body
 S6 e body S8 body
 S6 e div S8 div
@@ -332,3 +334,18 @@ S57 checkbox " S58 "
 S57 email " S58 "
 S58 " " S58 e
 S58 > input S6 e
+S8 button < S8 button<
+S8 > button S9 button
+S9 any button S9 button
+S9 </ button S10 button
+S10 button button S10 e
+S8 type= button S59 button
+S9 e button S33 button
+S33 < button S33 <button
+S39 e button S9 button
+S59 " button S59 "button
+S59 submit " S60 "
+S59 reset " S60 "
+S59 button " S60 "
+S60 " " S60 e
+S60 > button S9 button
