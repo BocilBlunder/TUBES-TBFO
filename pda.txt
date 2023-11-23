@@ -1,9 +1,9 @@
 S0 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17 S18 S19 S20 S21 S22 S23 S24 S25 S26 S27 S28 S29 S30 S31 S32 S33 S34 S35 S36 S37 S38 S39 S40 S41 S42 S43 S44 S45 S46 S47 S48 S49 S50 S51 S52 S53 S54 S55 S56
-< > html head body </ title any link href= rel= alt= " script src= h1 h2 h3 h4 h5 h6 table tr th td br div em b abbr strong small a hr img form method= action= GET POST
-Z < > html head body </ title any link href= rel= alt= " script src= h1 h2 h3 h4 h5 h6 table tr th td br div em b abbr strong small a hr img form method= action= GET POST
+< > html head body </ title any link href= rel= alt= " script src= h1 h2 h3 h4 h5 h6 table tr th td br div em b abbr strong small a hr img form method= action= GET POST button type= submit reset input password text email number checkbox
+Z < > html head body </ title any link href= rel= alt= " script src= h1 h2 h3 h4 h5 h6 table tr th td br div em b abbr strong small a hr img form method= action= GET POST button type= submit reset input password text email number checkbox
 S0
 Z
-S4
+S6
 F
 S0 < Z S0 <Z
 S0 html < S0 html<
@@ -32,6 +32,7 @@ S6 e body S33 body
 S6 e div S33 div
 S6 < body S41 body
 S6 < div S41 div
+S6 < form S41 form
 S6 e body S14 body
 S6 e div S14 div
 S6 e form S8 form
@@ -231,7 +232,6 @@ S35 div div S36 divdiv
 S35 div form S51 divform
 S35 form body S52 formbody
 S35 form div S52 formdiv
-S35 > div S6 div
 S36 > div S6 div
 S37 div div S38 e
 S37 form form S38 e
@@ -265,9 +265,11 @@ S40 br small S40 brsmall
 S40 > br S34 e
 S41 hr body S41 hrbody
 S41 hr div S41 hrdiv
+S41 hr form S41 hrform
 S41 > hr S6 e
 S41 img body S41 imgbody
 S41 img div S41 imgdiv
+S41 img form S41 imgform
 S41 e img S45 img
 S42 " href= S42 "href=
 S42 any " S42 "
@@ -317,3 +319,16 @@ S54 GET method= S56 method=
 S55 e form S52 form
 S55 > form S6 form
 S56 " method= S55 e
+S41 input body S41 inputbody
+S41 input div S41 inputdiv
+S41 input form S41 inputform
+S41 type= input S57 input
+S41 e input S58 input
+S57 " input S57 "input
+S57 text " S58 "
+S57 password " S58 "
+S57 number " S58 "
+S57 checkbox " S58 "
+S57 email " S58 "
+S58 " " S58 e
+S58 > input S6 e
