@@ -56,9 +56,14 @@ tokens = [
 'abbr',
 'strong',
 'small',
-'a',
 'hr',
 'img',
+'form',
+'method=',
+'action=',
+'POST',
+'GET',
+'a',
 ]
 
 # E - accept on empty stack or F - acceptable state (default is false)
