@@ -24,6 +24,8 @@ acceptable_states = []
 
 tokens = [
 '</',
+'-->',
+'<!--',
 '<', 
 '>',
 'html', 
@@ -89,7 +91,7 @@ def tokenize(input):
     while (input != ""):
         found_token = False
         for token in tokens:
-            if input.startswith(token) and (prev_char in [' ', '<', '>', '\n', '"', '</'] and ((len(token) < len(input)) and (input[len(token):][0] in [' ', '<', '>', '\n', '"'])) or (token in ['</', '<'])):
+            if input.startswith(token) and (prev_char in [' ', '<', '>', '\n', '"', '</'] and ((len(token) < len(input)) and (input[len(token):][0] in [' ', '<', '>', '\n', '"'])) or (token in ['</', '<', '<!--', '-->'])):
                 output.append(token)
                 token_length = len(token)
                 input = input[token_length:]
