@@ -1,6 +1,6 @@
 S0 S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17 S18 S19 S20 S21 S22 S23 S24 S25 S26 S27 S28 S29 S30 S31 S32 S33 S34 S35 S36 S37 S38 S39 S40 S41 S42 S43 S44 S45 S46 S47 S48 S49 S50 S51 S52 S53 S54 S55 S56
-< > html head body </ title any link href= rel= alt= " ' script src= h1 h2 h3 h4 h5 h6 table tr th td br div em b abbr strong small a hr img form method= action= GET POST button type= submit reset input password text email number checkbox
-Z < > html head body </ title any link href= rel= alt= " ' script src= h1 h2 h3 h4 h5 h6 table tr th td br div em b abbr strong small a hr img form method= action= GET POST button type= submit reset input password text email number checkbox
+< > html head body </ title any anyattr link href= rel= alt= " ' script src= h1 h2 h3 h4 h5 h6 table tr th td br div em b abbr strong small a hr img form method= action= GET POST button type= submit reset input password text email number checkbox
+Z < > html head body </ title any anyattr link href= rel= alt= " ' script src= h1 h2 h3 h4 h5 h6 table tr th td br div em b abbr strong small a hr img form method= action= GET POST button type= submit reset input password text email number checkbox
 S0
 Z
 S4
@@ -274,7 +274,7 @@ S41 img div S41 imgdiv
 S41 img form S41 imgform
 S41 e img S45 img
 S42 " href= S42 "href=
-S42 any " S42 "
+S42 anyattr " S42 "
 S42 " " S43 e
 S43 e href= S33 e
 S44 < th S44 <th
@@ -293,29 +293,31 @@ S45 alt= img S45 alt=img
 S45 src= img S45 src=img
 S45 " alt= S45 "alt=
 S45 " src= S45 "src=
-S45 any " S45 "
+S45 anyattr " S45 "
 S45 " " S46 e
 S46 e alt= S46 e
 S46 e img S45 img
 S46 e src= S50 e
-S47 any " S47 "
+S47 anyattr " S47 "
 S47 " " S47 e
 S47 e src= S19 e
 S48 " href= S48 "href=
 S48 " rel= S48 "rel=
-S48 any " S48 "
+S48 anyattr " S48 "
 S48 " " S16 e
 S49 any script S49 script
 S49 </ script S20 script
 S50 > img S6 e
 S51 > div S6 div
-S52 action= form S52 action=form
+S52 action= form S52 form
 S52 method= form S52 method=form
-S52 " action= S53 action=
+S52 " form S53 "form
 S52 " method= S54 method=
 S52 > form S6 form
-S53 any action= S53 action=
-S53 " action= S55 e
+S53 anyattr " S53 "
+S53 anyattr ' S53 '
+S53 ' ' S55 e
+S53 " " S55 e
 S54 POST method= S56 method=
 S54 GET method= S56 method=
 S55 e form S52 form
@@ -383,7 +385,7 @@ S61 " html S61 "html
 S61 " hr S61 "hr
 S61 " img S61 "img
 S61 " input S61 "input
-S61 any " S61 "
+S61 anyattr " S61 "
 S61 " " S62 e
 S62 e html S0 html
 S62 e head S1 head
@@ -418,7 +420,7 @@ S52 class= form S63 form
 S52 style= form S63 form
 S63 " form S63 "form
 S63 " div S63 "div
-S63 any " S63 "
+S63 anyattr " S63 "
 S63 " " S64 e
 S64 e form S52 form
 S64 e div S51 div
@@ -465,7 +467,7 @@ S65 " em S65 "em
 S65 " br S65 "br
 S65 " abbr S65 "abbr
 S65 " table S65 "table
-S65 any " S65 "
+S65 anyattr " S65 "
 S65 " " S66 e
 S66 e h1 S8 h1
 S66 e h2 S8 h2
@@ -508,7 +510,7 @@ S22 class= th S67 th
 S22 style= th S67 th
 S67 " tr S67 "tr
 S67 " th S67 "th
-S67 any " S67 "
+S67 anyattr " S67 "
 S67 " " S68 e
 S68 e tr S21 tr
 S68 e th S22 th
@@ -520,7 +522,7 @@ S27 class= td S69 td
 S27 style= td S69 td
 S69 " tr S69 "tr
 S69 " td S69 "td
-S69 any " S69 "
+S69 anyattr " S69 "
 S69 " " S70 e
 S70 e tr S26 tr
 S70 e td S27 td
@@ -551,25 +553,25 @@ S73 --> html S7 html
 S17 href= link S74 link
 S17 rel= link S74 link
 S74 " link S74 "link
-S74 any " S74 "
+S74 anyattr " S74 "
 S74 " " S17 e
 S17 id= link S76 link
 S17 class= link S76 link
 S17 style= link S76 link
 S76 " link S76 "link
-S76 any " S76 "
+S76 anyattr " S76 "
 S76 " " S77 e
 S77 e link S17 link
 S50 src= img S75 img
 S50 alt= img S75 img
 S75 " img S75 "img
-S75 any " S75 "
+S75 anyattr " S75 "
 S75 " " S50 e
 S50 id= img S78 img
 S50 class= img S78 img
 S50 style= img S78 img
 S78 " img S78 "img
-S78 any " S78 "
+S78 anyattr " S78 "
 S78 " " S79 e
 S79 e img S50 img
 S33 class= a S42 class=a
@@ -580,21 +582,20 @@ S42 " class= S42 "class=
 S42 " style= S42 "style=
 S11 ' src= S47 'src=
 S42 ' href= S42 'href=
-S42 any ' S42 '
+S42 anyattr ' S42 '
 S42 ' ' S43 e
 S45 ' alt= S45 'alt=
 S45 ' src= S45 'src=
-S45 any ' S45 '
+S45 anyattr ' S45 '
 S45 ' ' S46 e
-S47 any ' S47 '
+S47 anyattr ' S47 '
 S47 ' ' S47 e
 S48 ' href= S48 'href=
 S48 ' rel= S48 'rel=
-S48 any ' S48 '
+S48 anyattr ' S48 '
 S48 ' ' S16 e
 S52 ' action= S53 action=
 S52 ' method= S54 method=
-S53 ' action= S55 e
 S56 ' method= S55 e
 S57 ' input S57 'input
 S57 text ' S58 '
@@ -617,11 +618,11 @@ S61 ' html S61 'html
 S61 ' hr S61 'hr
 S61 ' img S61 'img
 S61 ' input S61 'input
-S61 any ' S61 '
+S61 anyattr ' S61 '
 S61 ' ' S62 e
 S63 ' form S63 'form
 S63 ' div S63 'div
-S63 any ' S63 '
+S63 anyattr ' S63 '
 S63 ' ' S64 e
 S65 ' h1 S65 'h1
 S65 ' h1 S65 'h1
@@ -639,27 +640,27 @@ S65 ' em S65 'em
 S65 ' br S65 'br
 S65 ' abbr S65 'abbr
 S65 ' table S65 'table
-S65 any ' S65 '
+S65 anyattr ' S65 '
 S65 ' ' S66 e
 S67 ' tr S67 'tr
 S67 ' th S67 'th
-S67 any ' S67 '
+S67 anyattr ' S67 '
 S67 ' ' S68 e
 S69 ' tr S69 'tr
 S69 ' td S69 'td
-S69 any ' S69 '
+S69 anyattr ' S69 '
 S69 ' ' S70 e
 S74 ' link S74 'link
-S74 any ' S74 '
+S74 anyattr ' S74 '
 S74 ' ' S17 e
 S76 ' link S76 'link
-S76 any ' S76 '
+S76 anyattr ' S76 '
 S76 ' ' S77 e
 S75 ' img S75 'img
-S75 any ' S75 '
+S75 anyattr ' S75 '
 S75 ' ' S50 e
 S78 ' img S78 'img
-S78 any ' S78 '
+S78 anyattr ' S78 '
 S78 ' ' S79 e
 S42 ' id= S42 'id=
 S42 ' class= S42 'class=
