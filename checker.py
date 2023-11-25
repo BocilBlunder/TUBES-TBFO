@@ -3,25 +3,21 @@ import sys
 
 sys.setrecursionlimit(10000)
 
+# Save PDA Information
 start_input = ""
 input_array = []
 found = 0
 accepted_config = []
-
 productions = {}
-
 states = []
-
 symbols = []
-
 stack_symbols = []
-
 start_symbol = ""
-
 stack_start = ""
-
 acceptable_states = []
+accept_with = ""
 
+# List of tokens
 tokens = [
 '</',
 '-->',
@@ -82,8 +78,7 @@ tokens = [
 'style='
 ]
 
-accept_with = ""
-
+# Tokenize input
 def tokenize(input):
     output = []
 
@@ -91,6 +86,7 @@ def tokenize(input):
     while (input != ""):
         found_token = False
         for token in tokens:
+            # Acquire token
             if input.startswith(token) and (prev_char in [' ', '<', '>', '\n', '"', '</', "'"] and ((len(token) < len(input)) and (input[len(token):][0] in [' ', '<', '>', '\n', '"', "'"])) or (token in ['</', '<', '<!--', '-->'])):
                 output.append(token)
                 token_length = len(token)
@@ -99,6 +95,7 @@ def tokenize(input):
                 prev_char = token
                 break
 
+        # Acquire single character if token not found
         if (not(found_token)):
             if (not(input[0] == ' ' or input[0] == '\n')):
                 output.append(input[0])
@@ -107,6 +104,7 @@ def tokenize(input):
 
     return output
 
+# Tokenize PDA
 def tokenize_pda(input):
     output = []
 
@@ -132,31 +130,23 @@ def generate(state, input, stack, config):
  global found
  total = 0
 
- if found:
+ if found: 
   return 0
 
- # check if our node can terminate with success
- if is_found(state, input, stack):
-  found = 1 # mark that word is accepted so other tree nodes know and terminate
-
-  # add successful configuration
+ if is_found(state, input, stack): # check if node can accept
+  found = 1
   accepted_config.extend(config)
-
   return 1
 
- # check if there are further moves (or we have to terminate)
- moves = get_moves(state, input, stack, config)
+ moves = get_moves(state, input, stack, config) # check for other possible moves
  if len(moves) == 0:
   return 0
 
- # for each move do a tree
- for i in moves:
+ for i in moves: # generate trees of each move
   total = total + generate(i[0], i[1], i[2], config + [(i[0], i[1], i[2])])  
 
  return total
 
-
-# checks if symbol is terminal or non-terminal
 def get_moves(state, input, stack, config):
  global productions
  moves = []
@@ -172,8 +162,7 @@ def get_moves(state, input, stack, config):
 
    new.append(current[3])
 
-   # read symbol from input if we have one
-   if len(current[0]) > 0:
+   if len(current[0]) > 0: # read next token or character if still not empty
     if len(input) > 0 and (input[0] == current[0] or (current[0] == "any" and input[0] not in ['<', '>']) or (current[0] == "anyattr" and (input[0] not in ['"', "'"] or stack[0] != input[0]))):
      new.append(input[1:])
     else:
@@ -181,8 +170,7 @@ def get_moves(state, input, stack, config):
    else:   
     new.append(input)
 
-   # read stack symbol
-   if len(current[1]) > 0:
+   if len(current[1]) > 0: # read stack symbol
     if len(stack) > 0 and stack[0] == current[1]:
      new.append(current[2] + stack[1:])
     else:
@@ -192,35 +180,33 @@ def get_moves(state, input, stack, config):
 
  return moves
 
-
-# checks if word already was generated somewhere in past
+# check if found
 def is_found(state, input, stack):
  global accept_with
  global acceptable_states
 
- # check if all symbols are read
  if len(input) > 0: 
   return 0
 
- # check if we accept with empty stack or end state
- if accept_with == "E":
-  if len(stack) == 1:  # accept if stack is empty
+ if accept_with == "E": # accepts with empty stack
+  if len(stack) == 1: # Z
    return 1
 
   return 0
 
  else:
   for i in acceptable_states:
-   if i == state: # accept if we are in terminal state
+   if i == state: # check if state is final state
     return 1
 
   return 0
 
+# print config
 def print_config(config):
  for i in config:
   print(i)
 
-
+# parse pda file
 def parse_file(filename):
  global productions
  global start_symbol
@@ -253,37 +239,27 @@ def parse_file(filename):
 
   productions[production[0]].extend(configuration)
 
- print (productions)
- print (start_symbol)
- print (start_stack)
- print (acceptable_states)
- print (accept_with)
-
  return 1
 
+# print verdict
 def done():
  if found:
-  print("Hurray! Input:\n" + start_input + "\nis part of grammar.") 
+  print("Accepted") 
  else:
-  print("Sorry! Input:\n" + start_input + "\nis not part of grammar.") 
+  print("Syntax Error") 
 
-
+# main program
 if len(sys.argv) != 3:
-    print("Invalid parameters. Usage: python3 checker.py pda.txt test.html")
+    print("Invalid parameters.")
     exit()
 
 parse_file(sys.argv[1])
 
 with open(sys.argv[2], 'r') as html_file:
     start_input = html_file.read()
-    input_array = tokenize(start_input)
+    input_array = tokenize(start_input) # tokenize html file
 
 if not generate(start_symbol, input_array, start_stack, [(start_symbol, input_array, start_stack)]):
-    print_config(accepted_config)
     done()
 else:
-    print_config(accepted_config)
     done()
-
-print(input_array)
-print(start_stack)
