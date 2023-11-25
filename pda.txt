@@ -268,7 +268,11 @@ S40 > br S34 e
 S41 hr body S41 hrbody
 S41 hr div S41 hrdiv
 S41 hr form S41 hrform
+S41 br body S41 brbody
+S41 br div S41 brdiv
+S41 br form S41 brform
 S41 > hr S6 e
+S41 > br S6 e
 S41 img body S41 imgbody
 S41 img div S41 imgdiv
 S41 img form S41 imgform
