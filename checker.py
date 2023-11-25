@@ -5,8 +5,8 @@ sys.setrecursionlimit(10000)
 
 start_input = ""
 input_array = []
-found = 0 # stores found state
-accepted_config = [] # here we will post end configuration that was accepted
+found = 0
+accepted_config = []
 
 productions = {}
 
@@ -38,6 +38,7 @@ tokens = [
 'href=',
 'rel=',
 '"',
+"'",
 'script',
 'src=',
 'h1',
@@ -81,7 +82,6 @@ tokens = [
 'style='
 ]
 
-# E - accept on empty stack or F - acceptable state (default is false)
 accept_with = ""
 
 def tokenize(input):
@@ -91,7 +91,7 @@ def tokenize(input):
     while (input != ""):
         found_token = False
         for token in tokens:
-            if input.startswith(token) and (prev_char in [' ', '<', '>', '\n', '"', '</'] and ((len(token) < len(input)) and (input[len(token):][0] in [' ', '<', '>', '\n', '"'])) or (token in ['</', '<', '<!--', '-->'])):
+            if input.startswith(token) and (prev_char in [' ', '<', '>', '\n', '"', '</', "'"] and ((len(token) < len(input)) and (input[len(token):][0] in [' ', '<', '>', '\n', '"', "'"])) or (token in ['</', '<', '<!--', '-->'])):
                 output.append(token)
                 token_length = len(token)
                 input = input[token_length:]
@@ -127,13 +127,11 @@ def tokenize_pda(input):
 
     return output
 
-# recursively generate all prossiblity tree and terminate on success
 def generate(state, input, stack, config):
  global productions
  global found
  total = 0
 
- # check for other tree node sucess
  if found:
   return 0
 
@@ -176,7 +174,7 @@ def get_moves(state, input, stack, config):
 
    # read symbol from input if we have one
    if len(current[0]) > 0:
-    if len(input) > 0 and (input[0] == current[0] or (current[0] == "any" and input[0] not in ['<', '>', '"'])):
+    if len(input) > 0 and (input[0] == current[0] or (current[0] == "any" and input[0] not in ['<', '>', '"', "'"])):
      new.append(input[1:])
     else:
      continue
