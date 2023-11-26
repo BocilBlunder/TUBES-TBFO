@@ -16,6 +16,8 @@ start_symbol = ""
 stack_start = ""
 acceptable_states = []
 accept_with = ""
+last_input = []
+error_input = ""
 
 # List of tokens
 tokens = [
@@ -128,6 +130,7 @@ def tokenize_pda(input):
 def generate(state, input, stack, config):
  global productions
  global found
+ global last_input
  total = 0
 
  if found: 
@@ -140,6 +143,8 @@ def generate(state, input, stack, config):
 
  moves = get_moves(state, input, stack, config) # check for other possible moves
  if len(moves) == 0:
+  if len(input) < len(last_input):
+    last_input = input
   return 0
 
  for i in moves: # generate trees of each move
@@ -241,12 +246,36 @@ def parse_file(filename):
 
  return 1
 
+# search error
+def search_error_location(file_path, error_input):
+    error_input = error_input.replace(" ", "").replace("\t", "").replace("\n", "")
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+        count = 0
+        test_lines = lines
+        while len(test_lines) > 0:
+            joined = ''.join(test_lines).replace(" ", "").replace("\t", "").replace("\n", "")
+            if error_input in joined:
+                count += 1
+            test_lines = test_lines[1:]
+        print(f"Terjadi kesalahan pada line {count}:")
+        print(lines[count - 1].strip())
+
 # print verdict
 def done():
+ global error_input
+ global last_input
+ global html_path
  if found:
   print("Accepted") 
  else:
-  print("Syntax Error") 
+  print("Syntax Error.")
+  for i in range(len(last_input)):
+    if len(last_input) <= i:
+        break
+    else:
+        error_input += last_input[i]
+  search_error_location(html_path, error_input)
 
 # main program
 if len(sys.argv) != 3:
@@ -254,10 +283,12 @@ if len(sys.argv) != 3:
     exit()
 
 parse_file(sys.argv[1])
+html_path = sys.argv[2]
 
-with open(sys.argv[2], 'r') as html_file:
+with open(html_path, 'r') as html_file:
     start_input = html_file.read()
     input_array = tokenize(start_input) # tokenize html file
+    last_input = start_input
 
 if not generate(start_symbol, input_array, start_stack, [(start_symbol, input_array, start_stack)]):
     done()
