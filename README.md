@@ -16,7 +16,7 @@ Repository ini berisi implementasi dari Pushdown Automaton (PDA) untuk melakukan
 2. pda.txt
 3. test.html (file testing)
 
-## How To Run The Website
+## How To Run The Program
 1. Clone repository ini
 2. Masuk ke folder src/
 3. Run di terminal dengan "python checker.py pda.txt test/(file test).html"
